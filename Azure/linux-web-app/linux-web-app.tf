@@ -20,11 +20,18 @@ resource "azurerm_linux_web_app" "linux_web_app" {
 
 }
 
-
 resource "azurerm_app_service_custom_hostname_binding" "web_app_custom_domain" {
   count = var.custom_hosting_domain == "" ? 0 : 1
 
   hostname            = var.custom_hosting_domain
   app_service_name    = azurerm_linux_web_app.linux_web_app.name
   resource_group_name = var.platform_name
+}
+
+output "web_app_id" {
+  value = azurerm_linux_web_app.linux_web_app.id
+}
+
+output "web_app_linux" {
+  value = azurerm_linux_web_app.linux_web_app
 }
