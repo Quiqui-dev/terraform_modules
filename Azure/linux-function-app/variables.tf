@@ -90,3 +90,9 @@ variable "allowed_CIDR_ranges" {
   description = "CIDR Ranges which are permitted to access the storage account"
 }
 
+
+variable "private_link_dns_zone_for_records" {
+  type        = list(any)
+  nullable    = true
+  description = "private link DNS zone ids for DNS record creation - should ideally come from a global module which can be referenced elsewhere"
+}
