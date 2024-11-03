@@ -42,6 +42,13 @@ variable "address_space" {
   description = "list of address spaces for this vnet"
 }
 
+variable "subnets" {
+  type        = map(string)
+  nullable    = true
+  default     = null
+  description = "Any subnets to create with this vnet"
+}
+
 variable "dns_servers" {
   type        = list(string)
   nullable    = true
