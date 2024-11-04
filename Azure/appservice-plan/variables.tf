@@ -34,7 +34,7 @@ variable "app_service_plan_os_type" {
   description = "The OS type for the app service plan"
 
   validation {
-    condition     = can(regex("^(Linux|Windows|WindowsContainer)"))
+    condition     = can(regex("^(Linux|Windows|WindowsContainer)", var.app_service_plan_os_type))
     error_message = "Can only use one of the supported OS Types"
   }
 }
