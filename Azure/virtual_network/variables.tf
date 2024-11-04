@@ -43,7 +43,7 @@ variable "address_space" {
 }
 
 variable "subnets" {
-  type        = map(string)
+  type        = map(any)
   nullable    = true
   default     = null
   description = "Any subnets to create with this vnet"
